@@ -1,0 +1,96 @@
+package com.tutorial.bean;
+
+import java.io.Serializable;
+
+public class Flight  implements Serializable
+{
+	private static final long serialVersionUID = 6202811344213826436L;
+	
+	private String flightId;
+	
+	private String flightName;
+	
+	/**
+	 * 
+	 */
+	public Flight()
+	{
+		
+	}
+	
+	/**
+	 * 
+	 * @param flightId
+	 * @param flightName
+	 */
+	public Flight(String flightId, String flightName)
+	{
+		this.flightId = flightId;
+		this.flightName = flightName;
+	}
+
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String getFlightId()
+	{
+		return flightId;
+	}
+
+	public void setFlightId(String flightId)
+	{
+		this.flightId = flightId;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String getFlightName()
+	{
+		return flightName;
+	}
+
+	/**
+	 * 
+	 * @param flightName
+	 */
+	public void setFlightName(String flightName)
+	{
+		this.flightName = flightName;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((flightId == null) ? 0 : flightId.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Flight other = (Flight) obj;
+		if (flightId == null)
+		{
+			if (other.flightId != null)
+				return false;
+		}
+		else if (!flightId.equals(other.flightId))
+			return false;
+		return true;
+	}
+
+	
+}
